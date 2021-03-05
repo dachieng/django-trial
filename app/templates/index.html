@@ -134,7 +134,7 @@
         {% for team in teams %}
         <div class="col-md-6">
             <div class="card text-center">
-                <img src="{{baseUrl}}/{{team.image}}" class="card-img-top">
+                <img src="{{team.image.url}}" class="card-img-top">
                 <div class="card-body">
                     <h4>{{team.name}}</h4>
                     <p>Age : {{team.age}}</p>
