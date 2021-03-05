@@ -131,24 +131,22 @@
     <div class="heading-underline"></div>
     </div>
     <div class="row padding">
+        {% for team in teams %}
         <div class="col-md-6">
             <div class="card text-center">
-                <img src="{% static 'images/team1.jpg' %}" class="card-img-top">
+                <img src="{{baseUrl}}/{{team.image}}" class="card-img-top">
                 <div class="card-body">
-                    <h4>Jane Jean</h4>
-                    <p>Jane has over ten years experience in Data Science and Web Development</p>
+                    <h4>{{team.name}}</h4>
+                    <p>Age : {{team.age}}</p>
+                    <p>{{team.description}}</p>
+                    {% if team.offer %}
+                    <button class="btn btn-outline-dark">Submit</button>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card text-center">
-                <img src="{% static 'images/team2.jpg' %}" class="card-img-top">
-                <div class="card-body">
-                    <h4>John Gene</h4>
-                    <p>John has over 7 years experience in machine learning and androi development</p>
-                </div>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 </div>
 
